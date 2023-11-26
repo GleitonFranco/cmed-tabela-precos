@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="styles.css"
+</head>
+<body>
+<h1>TABELA DE PRE&#199;O DE MEDICAMENTOS 2023</h1>
+<label>Procurar:</label>
+<input id="procura" type="text"/>
+<button onclick="procurar()">PROCURAR</button>
+<button onclick="limparCampo()">LIMPAR</button>
+
+<div>
+<table id="gridmed">
+  <thead>
+      <tr>
+        <th>NOME COMERCIAL</th>
+        <th>APRESENTA&#199;&#195;O</th>
+        <th>SUBST&#194;NCIA ATIVA</th>
+        <th>PRE&#199;O</th>
+      </tr>
+  </thead>
+  <tbody id="gridrows">
+  </tbody>
+</table>
+</div>
+<button onclick="irPage(--pageNumber)">ANTERIOR</button>
+<button onclick="irPage(++pageNumber)">PROXIMA</button>
+
+<div style="margin: 0 auto; width: 50%">
+    <label for="icms">Selecione o ICMS do seu Estado:</label>
+    <select name="cars" id="icms" onchange="mudarICMS()" >
+        <option value="20">20%</option>
+        <option value="18">18%</option>
+        <option value="17_5">17,5%</option>
+        <option value="17">17%</option>
+        <option value="12">12%</option>
+    </select><br><br>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ICMS</th>
+            <th>ESTADO</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>20%</td>
+            <td>RJ</td>
+        </tr>
+        <tr>
+            <td>18%</td>
+            <td>AM, AP, BA, CE, MA, MG, PB, PE,PI,PR, RN, SE, SP, TO <br> RJ (medicamentos da Portaria MS 1318/2002 )</td>
+        </tr>
+        <tr>
+            <td>17,5%</td>
+            <td>RO e RS</td>
+        </tr>
+        <tr>
+            <td>17%</td>
+            <td>DEMAIS ESTADOS</td>
+        </tr>
+        <tr>
+            <td>12%</td>
+            <td>Medicamentos Gen&#233;ricos de SP e MG</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="cmed_precos_sorted.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
+
+
