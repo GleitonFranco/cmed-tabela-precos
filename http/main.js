@@ -10,8 +10,9 @@ function procurar() {
     loadRows(indice);
 }
 
-function irPage(numPage) {
-    loadRows(numPage * pageSize);
+function irPage(pgNum) {
+    console.log(pgNum, pageSize)
+    loadRows(pgNum * pageSize);
 }
 
 function loadRows(indice) {
@@ -34,9 +35,16 @@ function limparCampo() {
 }
 
 function mudarICMS() {
-    icmsSelected = $('#icms option:selected').val();
+    const icmsSelected = $('#icms option:selected').val();
     console.log(icmsSelected);
     loadRows(indexAtFirstRow);
+}
+
+function mudarPaginacao() {
+    const paginacaoSelected = $('#paginacao option:selected').val();
+    console.log(paginacaoSelected);
+    pageSize = parseInt(paginacaoSelected);
+    irPage(pageNumber);
 }
 
 irPage(0);

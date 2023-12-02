@@ -1,6 +1,6 @@
-<html xmlns="http://www.w3.org/1999/html">
+<html xmlns="http://www.w3.org/1999/html" lang="br">
 <head>
-    <link rel="stylesheet" href="styles.css"
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <h1>TABELA DE PRE&#199;O DE MEDICAMENTOS 2023</h1>
@@ -23,17 +23,26 @@
   </tbody>
 </table>
 </div>
-<button onclick="irPage(--pageNumber)">ANTERIOR</button>
-<button onclick="irPage(++pageNumber)">PROXIMA</button>
-
+<button onclick="irPage(--pageNumber)">&lt;&lt;&nbsp;ANTERIOR</button>
+<button onclick="irPage(++pageNumber)">PROXIMA&nbsp;&gt;&gt;</button>
+&nbsp;&nbsp;&nbsp;
+<label for="paginacao">ITENS POR P&#193;GINA:</label>
+<select name="cars" id="paginacao" onchange="mudarPaginacao()">
+    <option value="10">10</option>
+    <option value="20" selected="selected">20</option>
+    <option value="50">50</option>
+    <option value="75">75</option>
+    <option value="100">100</option>
+</select>
+<br><br>
 <div style="margin: 0 auto; width: 50%">
     <label for="icms">Selecione o ICMS do seu Estado:</label>
     <select name="cars" id="icms" onchange="mudarICMS()" >
-        <option value="20">20%</option>
-        <option value="18">18%</option>
-        <option value="17_5">17,5%</option>
-        <option value="17">17%</option>
         <option value="12">12%</option>
+        <option value="17">17%</option>
+        <option value="17_5">17,5%</option>
+        <option value="18">18%</option>
+        <option value="20">20%</option>
     </select><br><br>
 
     <table>
@@ -68,9 +77,9 @@
     </table>
 </div>
 
-<script src="cmed_precos_sorted.js"></script>
+<script src="cmed_precos_sorted.js" charset="UTF-8"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-<script src="main.js"></script>
+<script src="main.js" charset="UTF-8"></script>
 
 </body>
 </html>
