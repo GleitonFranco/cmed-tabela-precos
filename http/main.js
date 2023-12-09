@@ -21,13 +21,18 @@ function loadRows(indice) {
     let pageCut = tabela.slice(indice, indice + pageSize);
     indexAtFirstRow = tabela.indexOf(pageCut[0]);
     pageCut.forEach(produto => {
-        tbody.append("<tr><td>" + produto.PRODUTO
-            + "</td><td>" + produto.APRESENTACAO
-            + "</td><td>" + produto.SUBSTANCIA
-            + "</td><td>" + produto["PMC" + icmsSelected]
+        tbody.append("<tr class='border border-slate-500'><td class='block md:inline px-2'>" + produto.PRODUTO
+            + "</td><td class='px-2'>" + produto.APRESENTACAO
+            + "</td><td class='px-2'>" + produto.SUBSTANCIA
+            + "</td><td class='px-2 text-right'>" + formatNumber(produto["PMC" + icmsSelected])
             + "</td></tr>"
         );
     });
+}
+
+function formatNumber(numero) {
+    let formatado = numero.toString().replace('.', ',');
+    return formatado;
 }
 
 function limparCampo() {
@@ -35,7 +40,7 @@ function limparCampo() {
 }
 
 function mudarICMS() {
-    const icmsSelected = $('#icms option:selected').val();
+    icmsSelected = $('#icms option:selected').val();
     console.log(icmsSelected);
     loadRows(indexAtFirstRow);
 }
@@ -47,4 +52,22 @@ function mudarPaginacao() {
     irPage(pageNumber);
 }
 
+function applyStyles() {
+    const btn = 'px-4 py-1 text-sm text-purple-100 bg-purple-600 font-semibold border border-purple-800';
+    const btnRound = btn + ' rounded-full';
+    const btnRoundR = btn + ' rounded-r-full';
+    const btnRoundL = btn + ' rounded-l-full';
+    $('.btn-nav-r').attr({class: btnRoundR});
+    $('.btn-nav-l').attr({class: btnRoundL});
+    $('.btn-search-r').attr({class: btnRoundR});
+    $('.btn-search-l').attr({class: btnRoundL});
+    const input = 'px-3 py-0.5 bg-indigo-100 rounded-lg border-2 border-purple-600';
+    $('.input').attr({class: input});
+    $('.toolbar').attr({class: 'mt-4 px-4 block md:inline'});
+}
+
 irPage(0);
+applyStyles();
+
+//https://tailwindcss.com/docs/utility-first
+//https://tailwindcss.com/docs/padding

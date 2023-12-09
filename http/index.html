@@ -1,76 +1,86 @@
-<html xmlns="http://www.w3.org/1999/html" lang="br">
-<head>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<h1>TABELA DE PRE&#199;O DE MEDICAMENTOS 2023</h1>
-<label>Procurar:</label>
-<input id="procura" type="text"/>
-<button onclick="procurar()">PROCURAR</button>
-<button onclick="limparCampo()">LIMPAR</button>
+<html xmlns="http://www.w3.org/1999/html" lang="pt-br">
 
-<div>
-<table id="gridmed">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-indigo-200 font-sans text-base">
+<h1 class="mb-4 text-4xl lg:text-6xl font-black text-center">TABELA DE PRE&#199;O DE MEDICAMENTOS 2023</h1>
+<span class="toolbar">
+    <label class="block md:inline">NOME A PESQUISAR OU INICIAIS:</label>
+    <input id="procura" type="text" class="input"/>
+</span>
+<span class="toolbar">
+    <button onclick="procurar()" class="btn-search-l">PROCURAR</button>
+    <button onclick="limparCampo()" class="btn-search-r">LIMPAR</button>
+</span>
+<div class="m-4 px-4 py-8 bg-indigo-200 overflow-x-auto">
+<table id="gridmed" class="table-auto border border-slate-500">
   <thead>
-      <tr>
-        <th>NOME COMERCIAL</th>
-        <th>APRESENTA&#199;&#195;O</th>
-        <th>SUBST&#194;NCIA ATIVA</th>
-        <th>PRE&#199;O</th>
+      <tr class="bg-indigo-300">
+        <th class="px-2">NOME COMERCIAL</th>
+        <th class="px-2">APRESENTA&#199;&#195;O</th>
+        <th class="px-2">SUBST&#194;NCIA ATIVA</th>
+        <th class="px-2">PRE&#199;O</th>
       </tr>
   </thead>
   <tbody id="gridrows">
   </tbody>
 </table>
 </div>
-<button onclick="irPage(--pageNumber)">&lt;&lt;&nbsp;ANTERIOR</button>
-<button onclick="irPage(++pageNumber)">PROXIMA&nbsp;&gt;&gt;</button>
-&nbsp;&nbsp;&nbsp;
-<label for="paginacao">ITENS POR P&#193;GINA:</label>
-<select name="cars" id="paginacao" onchange="mudarPaginacao()">
-    <option value="10">10</option>
-    <option value="20" selected="selected">20</option>
-    <option value="50">50</option>
-    <option value="75">75</option>
-    <option value="100">100</option>
-</select>
+<span class="px-4 block md:inline">
+    <button onclick="irPage(--pageNumber)" class="btn-nav-l">&lt;&lt;&nbsp;ANTERIOR</button>
+    <button onclick="irPage(++pageNumber)" class="btn-nav-r">PR&#211;XIMA&nbsp;&gt;&gt;</button>
+</span>
+<span class="toolbar">
+    <label for="paginacao">ITENS POR P&#193;GINA:</label>
+    <select name="cars" id="paginacao" onchange="mudarPaginacao()" class="input">
+        <option value="10">10</option>
+        <option value="20" selected="selected">20</option>
+        <option value="50">50</option>
+        <option value="75">75</option>
+        <option value="100">100</option>
+    </select>
+</span>
 <br><br>
-<div style="margin: 0 auto; width: 50%">
-    <label for="icms">Selecione o ICMS do seu Estado:</label>
-    <select name="cars" id="icms" onchange="mudarICMS()" >
-        <option value="12">12%</option>
-        <option value="17">17%</option>
-        <option value="17_5">17,5%</option>
-        <option value="18">18%</option>
-        <option value="20">20%</option>
+<div class="w-3/4 mx-auto">
+    <label for="icms">SELECIONE O ICMS DO SEU ESTADO:</label>
+    <select name="cars" id="icms" onchange="mudarICMS()" class="input">
+        <option value="12">12&nbsp;%</option>
+        <option value="17">17&nbsp;%</option>
+        <option value="17_5">17,5&nbsp;%</option>
+        <option value="18">18&nbsp;%</option>
+        <option value="20" selected="selected">20&nbsp;%</option>
     </select><br><br>
 
-    <table>
+    <table class="bg-indigo-100 table-auto">
         <thead>
-        <tr>
-            <th>ICMS</th>
+        <tr class="bg-indigo-300">
+            <th class="px-2">ICMS</th>
             <th>ESTADO</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td>20%</td>
+            <td class="px-2 text-right">20&nbsp;%</td>
             <td>RJ</td>
         </tr>
-        <tr>
-            <td>18%</td>
+        <tr class="bg-indigo-300">
+            <td class="px-2 text-right">18&nbsp;%</td>
             <td>AM, AP, BA, CE, MA, MG, PB, PE,PI,PR, RN, SE, SP, TO <br> RJ (medicamentos da Portaria MS 1318/2002 )</td>
         </tr>
         <tr>
-            <td>17,5%</td>
+            <td class="px-2 text-right">17,5&nbsp;%</td>
             <td>RO e RS</td>
         </tr>
-        <tr>
-            <td>17%</td>
+        <tr class="bg-indigo-300">
+            <td class="px-2 text-right">17&nbsp;%</td>
             <td>DEMAIS ESTADOS</td>
         </tr>
         <tr>
-            <td>12%</td>
+            <td class="px-2 text-right">12&nbsp;%</td>
             <td>Medicamentos Gen&#233;ricos de SP e MG</td>
         </tr>
         </tbody>
@@ -78,7 +88,8 @@
 </div>
 
 <script src="cmed_precos_sorted.js" charset="UTF-8"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+        crossorigin="anonymous"></script>
 <script src="main.js" charset="UTF-8"></script>
 
 </body>
