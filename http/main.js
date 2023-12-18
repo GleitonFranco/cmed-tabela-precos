@@ -69,5 +69,30 @@ function applyStyles() {
 irPage(0);
 applyStyles();
 
+function ordenarTabelaPorNomeComercial() {
+    tabela.sort((a,b) => {
+        const an = a.PRODUTO.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const bn = b.PRODUTO.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        return an.localeCompare(bn);
+    });
+}
+
+function gerarChaves() {
+    let chaveAnterior = tabela[0].PRODUTO.substring(0, 3);
+    let chaves = [{
+        pos: 0, val: chaveAnterior
+    }];
+    for (let i=0; i < tabela.length; i++) {
+        let chaveAtual = tabela[i].PRODUTO.substring(0,3);
+        if (chaveAtual != chaveAnterior) {
+            chaveAnterior = chaveAtual;
+            chaves.push({
+                pos: i, val: chaveAnterior
+            });
+        }
+    }
+    console.log(chaves);
+}
+
 //https://tailwindcss.com/docs/utility-first
 //https://tailwindcss.com/docs/padding
