@@ -17,3 +17,5 @@ OBS: a planilha XLS obtida foi previamente convertida para ODS.
 OBS: o dump do banco de dados SQLite é um binário e está disponível para download no link:
 [https://cmed-site.s3.sa-east-1.amazonaws.com/cmed_precos_sqlite.db]
 
+Exemplo de front end usando o JSON gerado:
+[https://cmed-site.s3.sa-east-1.amazonaws.com/index.html]
