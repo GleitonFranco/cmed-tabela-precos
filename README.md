@@ -10,7 +10,7 @@ O objetivo deste projeto é disponibilizar bases de dados que podem ser usadas e
 # Arquivos disponíveis:
 - cmed_transformacao_xls.ktr: projeto de automatização de migração e transformação de dados pelo pentaho (spoon), cujo ponto inicial é a planilha oficial da CMED no link abaixo:
 https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/cmed/precos
-OBS: a planilha XLS obtida foi previamente convertida para ODS.
+<br>OBS: a planilha XLS obtida foi previamente convertida para ODS.
 - Pasta output: os dados finais em banco de dados ou outros formatos texto utilizáveis por programas.
 -- mariadb: contém o script SQL;
   json: arquivo texto JSON que poderá ser usado em front end;<br>
