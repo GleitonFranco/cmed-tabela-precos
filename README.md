@@ -9,13 +9,13 @@ O objetivo deste projeto é disponibilizar bases de dados que podem ser usadas e
 
 # Arquivos disponíveis:
 - cmed_transformacao_xls.ktr: projeto de automatização de migração e transformação de dados pelo pentaho (spoon), cujo ponto inicial é a planilha oficial da CMED no link abaixo:
-[https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/cmed/precos]
+https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/cmed/precos
 OBS: a planilha XLS obtida foi previamente convertida para ODS.
 - Pasta output: os dados finais em banco de dados ou outros formatos texto utilizáveis por programas.
 -- mariadb: contém o script SQL;
-  json: arquivo texto JSON que poderá ser usado em front end;
-OBS: o dump do banco de dados SQLite é um binário e está disponível para download no link:
-[https://cmed-site.s3.sa-east-1.amazonaws.com/cmed_precos_sqlite.db]
+  json: arquivo texto JSON que poderá ser usado em front end;<br>
+OBS: o dump do banco de dados SQLite é um binário e está disponível para download no link:<br>
+https://cmed-site.s3.sa-east-1.amazonaws.com/cmed_precos_sqlite.db
 
-Exemplo de front end usando o JSON gerado:
+Exemplo de front end usando o JSON gerado:<br>
 https://cmed-site.s3.sa-east-1.amazonaws.com/index.html
