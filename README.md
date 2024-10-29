@@ -15,5 +15,5 @@ OBS: a planilha XLS obtida foi previamente convertida para ODS.
 -- mariadb: contém o script SQL;
   json: arquivo texto JSON que poderá ser usado em front end;
 OBS: o dump do banco de dados SQLite é um binário e está disponível para download no link:
-[https://cmed-tabelas.s3.sa-east-1.amazonaws.com/cmed_precos_sqlite.db]
+[https://cmed-site.s3.sa-east-1.amazonaws.com/cmed_precos_sqlite.db]
 
