@@ -18,4 +18,4 @@ OBS: o dump do banco de dados SQLite é um binário e está disponível para dow
 [https://cmed-site.s3.sa-east-1.amazonaws.com/cmed_precos_sqlite.db]
 
 Exemplo de front end usando o JSON gerado:
-[https://cmed-site.s3.sa-east-1.amazonaws.com/index.html]
+https://cmed-site.s3.sa-east-1.amazonaws.com/index.html
